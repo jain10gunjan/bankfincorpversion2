@@ -2,7 +2,7 @@ const stats = [
   { value: "98.99%", label: "Happy Customers" },
   { value: "₹1600Cr+", label: "Disbursed Annually" },
   { value: "All Over India", label: "City Coverage" },
-  { value: "350+", label: "Bank Partners" },
+  { value: "350+", label: "Banking Partners" },
 ];
 
 const StatsBar = () => {
