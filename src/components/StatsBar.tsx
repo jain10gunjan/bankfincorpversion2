@@ -1,8 +1,8 @@
 const stats = [
-  { value: "5.8 Lacs+", label: "Happy Customers" },
-  { value: "₹6,100 Mn+", label: "Disbursed Annually" },
-  { value: "150+", label: "Cities Covered" },
-  { value: "587+", label: "Branches" },
+  { value: "98.99%", label: "Happy Customers" },
+  { value: "₹1600Cr+", label: "Disbursed Annually" },
+  { value: "All Over India", label: "City Coverage" },
+  { value: "350+", label: "Bank Partners" },
 ];
 
 const StatsBar = () => {

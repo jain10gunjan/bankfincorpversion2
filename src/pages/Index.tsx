@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const personalLoanImg = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80&auto=format&fit=crop";
 const homeLoanImg = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80&auto=format&fit=crop";
 const businessLoanImg = "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80&auto=format&fit=crop";
-const propertyLoanImg = "https://images.unsplash.com/photo-1507209696998-3c532be9b2b1?w=1200&q=80&auto=format&fit=crop";
+const propertyLoanImg = "https://www.idfcfirstbank.com/content/dam/idfcfirstbank/images/blog/home-loan/all-about-mortgage-loans-and-lap-717x404.jpg";
 
 const loanProducts = [
   {
@@ -257,35 +257,19 @@ const Index = () => {
             <div className="relative overflow-hidden">
               <div className="flex animate-marquee">
                 {[
-                  { alt: "SBI", src: "https://upload.wikimedia.org/wikipedia/commons/5/59/State_Bank_of_India_logo.svg" },
-                  { alt: "HDFC Bank", src: "https://upload.wikimedia.org/wikipedia/commons/5/5b/HDFC_Bank_Logo.svg" },
-                  { alt: "ICICI Bank", src: "https://upload.wikimedia.org/wikipedia/commons/4/4b/ICICI_Bank_Logo.svg" },
-                  { alt: "Axis Bank", src: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Axis_Bank_logo.svg" },
-                  { alt: "Kotak", src: "https://upload.wikimedia.org/wikipedia/commons/5/59/Kotak_Mahindra_Bank_logo.svg" },
-                  { alt: "Yes Bank", src: "https://upload.wikimedia.org/wikipedia/commons/7/77/YES_BANK_Logo.svg" },
-                  { alt: "L&T Finance", src: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Larsen_%26_Toubro_logo.svg" },
-                  { alt: "Bajaj Finserv", src: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Bajaj_Finserv_Logo.svg" },
-                  { alt: "IDFC First", src: "https://upload.wikimedia.org/wikipedia/commons/4/4a/IDFC_First_Bank_logo.svg" },
-                  { alt: "IndusInd Bank", src: "https://upload.wikimedia.org/wikipedia/commons/7/7a/IndusInd_Bank_logo.svg" },
+                  { alt: "SBI", src: "https://sbi.co.in/o/SBI-Theme/images/custom/logo.png" },
+                  { alt: "HDFC Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/375px-HDFC_Bank_Logo.svg.png" },
+                  { alt: "ICICI Bank", src: "https://i0.wp.com/pathfinderstraining.com/wp-content/uploads/2022/10/ICICI-BANK-LOGO.png?fit=4620%2C1200&ssl=1" },
+                  { alt: "Axis Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/AXISBank_Logo.svg/2560px-AXISBank_Logo.svg.png" },
+                  { alt: "Kotak", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ51HGpmIn5CQwTBteGJ8dH5FZj4-V6kuPoQ&s" },
+                  { alt: "Yes Bank", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7hIU7hKVcm98kSsxw_qhXR6-Xx2Wi-BSXAw&s" },
+                  { alt: "L&T Finance", src: "https://selfhelp.ltfs.com/ServicingApp/assets/images/logo.png" },
+                  { alt: "Bajaj Finserv", src: "https://wp.logos-download.com/wp-content/uploads/2024/04/Bajaj_Finserv_Logo.png?dl" },
+                  { alt: "IndusInd Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Logo_of_IDFC_First_Bank.svg/375px-Logo_of_IDFC_First_Bank.svg.png" },
+                  { alt: "Federal Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Federal-Bank-Logo_SVG.svg/500px-Federal-Bank-Logo_SVG.svg.png" },
+                  { alt: "PNB", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Punjab_National_Bank_new_logo.svg/375px-Punjab_National_Bank_new_logo.svg.png" },
                 ].map((bank, i) => (
                   <div key={i} className="flex-shrink-0 mx-8 h-12 flex items-center opacity-70 hover:opacity-100 transition-opacity">
-                    <img src={bank.src} alt={bank.alt} className="h-8 w-auto object-contain" />
-                  </div>
-                ))}
-                {/* Duplicate for seamless loop */}
-                {[
-                  { alt: "SBI", src: "https://upload.wikimedia.org/wikipedia/commons/5/59/State_Bank_of_India_logo.svg" },
-                  { alt: "HDFC Bank", src: "https://upload.wikimedia.org/wikipedia/commons/5/5b/HDFC_Bank_Logo.svg" },
-                  { alt: "ICICI Bank", src: "https://upload.wikimedia.org/wikipedia/commons/4/4b/ICICI_Bank_Logo.svg" },
-                  { alt: "Axis Bank", src: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Axis_Bank_logo.svg" },
-                  { alt: "Kotak", src: "https://upload.wikimedia.org/wikipedia/commons/5/59/Kotak_Mahindra_Bank_logo.svg" },
-                  { alt: "Yes Bank", src: "https://upload.wikimedia.org/wikipedia/commons/7/77/YES_BANK_Logo.svg" },
-                  { alt: "L&T Finance", src: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Larsen_%26_Toubro_logo.svg" },
-                  { alt: "Bajaj Finserv", src: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Bajaj_Finserv_Logo.svg" },
-                  { alt: "IDFC First", src: "https://upload.wikimedia.org/wikipedia/commons/4/4a/IDFC_First_Bank_logo.svg" },
-                  { alt: "IndusInd Bank", src: "https://upload.wikimedia.org/wikipedia/commons/7/7a/IndusInd_Bank_logo.svg" },
-                ].map((bank, i) => (
-                  <div key={`dup-${i}`} className="flex-shrink-0 mx-8 h-12 flex items-center opacity-70 hover:opacity-100 transition-opacity">
                     <img src={bank.src} alt={bank.alt} className="h-8 w-auto object-contain" />
                   </div>
                 ))}
@@ -294,59 +278,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Featured Blogs - UrbanMoney Style */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Blogs</h2>
-              <div className="flex flex-wrap justify-center gap-2 mb-8">
-                {["All", "Business Loan Archive", "CIBIL Score Archive", "Financial News", "Home Loan Archive", "LAP Archive", "Media Coverage", "Mutual Funds Archive", "Personal Loan Archive"].map((cat, i) => (
-                  <span key={i} className={`px-3 py-1 rounded-full text-sm ${i === 0 ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
-                    {cat}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "RBI Holds Repo Rate at 5.5%, Keeps GDP Growth Forecast at 6.5%",
-                  category: "Media Coverage",
-                  date: "Jun 10, 2025",
-                  image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1400&q=80",
-                },
-                {
-                  title: "Home Loans Get Costlier : SBI Increases Interest Rates by 25 Basis Points",
-                  category: "Financial News",
-                  date: "Jun 06, 2025",
-                  image: "https://images.unsplash.com/photo-1560518883-3c1c2a96e09f?auto=format&fit=crop&w=1400&q=80",
-                },
-                {
-                  title: "Best 10 Credit Card in India 2025",
-                  category: "CIBIL Score Archive",
-                  date: "Jan 09, 2025",
-                  image: "https://images.unsplash.com/photo-1518544889286-b88aee9dde4b?auto=format&fit=crop&w=1400&q=80",
-                },
-              ].map((post, i) => (
-                <Card key={i} className="overflow-hidden hover:shadow-elevated transition-shadow">
-                  <CardContent className="p-0">
-                    <div className="h-44 w-full overflow-hidden">
-                      <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-                    </div>
-                    <div className="p-5">
-                      <div className="text-xs text-primary font-medium mb-2">{post.category}</div>
-                      <h3 className="font-semibold mb-2 line-clamp-2">{post.title}</h3>
-                      <div className="text-xs text-muted-foreground mb-4">{post.date}</div>
-                      <Link to="/">
-                        <Button variant="outline" size="sm">Read More</Button>
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
         <HowItWorks />
 

@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Target, Eye, Award, Users, TrendingUp, Shield } from "lucide-react";
+import { Target, Eye, Award, Users, TrendingUp, Shield, Calendar, Building, Globe, Zap } from "lucide-react";
 import aboutTeam from "@/assets/about-team.jpg";
 
 const values = [
@@ -29,10 +29,48 @@ const values = [
 ];
 
 const stats = [
-  { value: "15+", label: "Years of Experience" },
-  { value: "5.8L+", label: "Happy Customers" },
-  { value: "₹6,100M+", label: "Loans Disbursed" },
-  { value: "150+", label: "Cities Covered" },
+  { value: "98.99%", label: "Happy Customers" },
+  { value: "₹1600Cr+", label: "Disbursed Annually" },
+  { value: "All Over India", label: "City Coverage" },
+  { value: "350+", label: "Bank Partners" },
+];
+
+const timelineData = [
+  {
+    year: "2011",
+    title: "Company Founded",
+    description: "Started with a vision to democratize financial services",
+    icon: Building,
+    color: "from-blue-500 to-blue-600"
+  },
+  {
+    year: "2012",
+    title: "Pan India Expansion",
+    description: "Expanded operations across all major Indian cities",
+    icon: Zap,
+    color: "from-green-500 to-green-600"
+  },
+  {
+    year: "2015",
+    title: "Digital Transformation",
+    description: "Launched online loan application platforms for faster and easier loan approvals",
+    icon: Globe,
+    color: "from-purple-500 to-purple-600"
+  },
+  {
+    year: "2023",
+    title: "₹1600Cr Milestone",
+    description: "Achieved ₹1600 Crores in total loan disbursements",
+    icon: TrendingUp,
+    color: "from-orange-500 to-orange-600"
+  },
+  {
+    year: "2025",
+    title: "98.99% Happy Customers",
+    description: "Served well over Pan India with 98.99% happy customers",
+    icon: Shield,
+    color: "from-red-500 to-red-600"
+  },
 ];
 
 const About = () => {
@@ -97,6 +135,51 @@ const About = () => {
                   alt="Our Team"
                   className="rounded-2xl shadow-elevated w-full h-auto"
                 />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Timeline */}
+        <section className="py-16 bg-gradient-to-b from-muted/20 to-transparent">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                From humble beginnings to becoming a trusted financial partner for millions
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="relative">
+                {/* Timeline Line */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary to-accent"></div>
+                
+                {/* Timeline Items */}
+                <div className="space-y-12">
+                  {timelineData.map((item, index) => (
+                    <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                      {/* Timeline Dot */}
+                      <div className={`absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center z-10 shadow-lg`}>
+                        <item.icon className="text-white" size={24} />
+                      </div>
+                      
+                      {/* Content Card */}
+                      <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                        <Card className="shadow-card hover:shadow-elevated transition-shadow">
+                          <CardContent className="p-6">
+                            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r ${item.color} text-white text-sm font-semibold mb-3`}>
+                              <Calendar size={16} />
+                              {item.year}
+                            </div>
+                            <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                            <p className="text-muted-foreground">{item.description}</p>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

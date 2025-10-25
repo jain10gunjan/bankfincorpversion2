@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -13,20 +13,20 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    details: "+91 1800-123-4567",
+    details: "1800 120 8921",
     subdetails: "Mon-Sat, 9 AM - 6 PM",
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: "support@urbanmoney.com",
+    details: "support@bankfincorp.com",
     subdetails: "We'll respond within 24 hours",
   },
   {
     icon: MapPin,
-    title: "Visit Us",
-    details: "123 Financial District",
-    subdetails: "Mumbai, India 400001",
+    title: "Head Branch",
+    details: "B - Bank Fincorp Unit-1, Shop No. C/16",
+    subdetails: "Sudarshan Complex, Near Police Post, Pithampur Sector-2, District Dhar, MP 454775, India",
   },
   {
     icon: Clock,
@@ -47,7 +47,32 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent successfully! We'll get back to you soon.");
+    
+    // Create WhatsApp message
+    const whatsappMessage = `Hello Bank Fincorp Team,
+
+I would like to get in touch regarding: ${formData.subject}
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message: ${formData.message}
+
+Please get back to me at your earliest convenience.
+
+Thank you!`;
+
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/919522444141?text=${encodedMessage}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+    
+    toast.success("Redirecting to WhatsApp... Please send your message there!");
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
@@ -103,7 +128,7 @@ const Contact = () => {
                 <div className="mb-8">
                   <h2 className="text-3xl font-bold mb-4">Send Us a Message</h2>
                   <p className="text-muted-foreground">
-                    Fill out the form below and we'll get back to you as soon as possible
+                    Fill out the form below and we'll redirect you to WhatsApp with your message prefilled for quick communication
                   </p>
                 </div>
 
@@ -175,8 +200,8 @@ const Contact = () => {
                       </div>
 
                       <Button type="submit" size="lg" className="w-full gradient-hero">
-                        <Send className="mr-2" size={20} />
-                        Send Message
+                        <MessageCircle className="mr-2" size={20} />
+                        Send via WhatsApp
                       </Button>
                     </form>
                   </CardContent>
@@ -191,8 +216,11 @@ const Contact = () => {
                     <div className="w-full h-[400px] bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center">
                       <div className="text-center p-8">
                         <MapPin className="mx-auto mb-4 text-primary" size={48} />
-                        <p className="text-lg font-semibold mb-2">123 Financial District</p>
-                        <p className="text-muted-foreground">Mumbai, India 400001</p>
+                        <p className="text-lg font-semibold mb-2">B - Bank Fincorp Unit-1</p>
+                        <p className="text-muted-foreground mb-2">Shop No. C/16, Sudarshan Complex</p>
+                        <p className="text-muted-foreground mb-2">Near Police Post, Pithampur Sector-2</p>
+                        <p className="text-muted-foreground">District Dhar, MP 454775, India</p>
+                        <p className="text-sm text-primary font-semibold mt-2">Head Branch - A Indore M.P.</p>
                       </div>
                     </div>
                   </Card>
@@ -206,23 +234,35 @@ const Contact = () => {
                     </p>
                     <div className="space-y-3">
                       <a
-                        href="tel:+911800123567"
+                        href="tel:18001208921"
                         className="flex items-center gap-3 p-4 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
                       >
                         <Phone size={24} />
                         <div>
                           <div className="font-semibold">Call Now</div>
-                          <div className="text-sm text-white/80">+91 1800-123-4567</div>
+                          <div className="text-sm text-white/80">1800 120 8921</div>
                         </div>
                       </a>
                       <a
-                        href="mailto:support@urbanmoney.com"
+                        href="https://wa.me/919522444141"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 p-4 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
+                      >
+                        <MessageCircle size={24} />
+                        <div>
+                          <div className="font-semibold">WhatsApp Us</div>
+                          <div className="text-sm text-white/80">+91 9522444141</div>
+                        </div>
+                      </a>
+                      <a
+                        href="mailto:support@bankfincorp.com"
                         className="flex items-center gap-3 p-4 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
                       >
                         <Mail size={24} />
                         <div>
                           <div className="font-semibold">Email Us</div>
-                          <div className="text-sm text-white/80">support@urbanmoney.com</div>
+                          <div className="text-sm text-white/80">support@bankfincorp.com</div>
                         </div>
                       </a>
                     </div>

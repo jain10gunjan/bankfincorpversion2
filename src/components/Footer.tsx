@@ -9,10 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <svg className="h-8 w-auto" viewBox="0 0 512 128" aria-hidden="true">
-                <text x="0" y="88" fontFamily="Inter, system-ui, sans-serif" fontWeight="800" fontSize="88" fill="hsl(var(--accent))">Bank</text>
-                <text x="250" y="88" fontFamily="Inter, system-ui, sans-serif" fontWeight="800" fontSize="88" fill="hsl(var(--primary))">fincorp</text>
-              </svg>
+              <img 
+                src="/src/assets/logo.png" 
+                alt="BankFincorp Logo" 
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               Your trusted partner for all financial needs. We provide comprehensive financial services to help you achieve your goals.
@@ -78,11 +79,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-sm text-muted-foreground">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
-                <span>123 Financial District, Mumbai, India 400001</span>
+                <span>B - Bank Fincorp Unit-1, Shop No. C/16, Sudarshan Complex, Near Police Post, Pithampur Sector-2, District Dhar, MP 454775, India</span>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone size={18} />
-                <span>+91 1800-123-4567</span>
+                <span>1800 120 8921</span>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail size={18} />

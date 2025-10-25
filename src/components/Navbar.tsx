@@ -24,10 +24,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <svg className="h-8 w-auto" viewBox="0 0 512 128" aria-hidden="true">
-              <text x="0" y="88" fontFamily="Inter, system-ui, sans-serif" fontWeight="800" fontSize="88" fill="hsl(var(--accent))">Bank</text>
-              <text x="250" y="88" fontFamily="Inter, system-ui, sans-serif" fontWeight="800" fontSize="88" fill="hsl(var(--primary))">fincorp</text>
-            </svg>
+            <img 
+              src="/src/assets/logo.png" 
+              alt="BankFincorp Logo" 
+              className="h-12 w-auto"
+            />
             <span className="sr-only">BankFincorp</span>
           </Link>
 

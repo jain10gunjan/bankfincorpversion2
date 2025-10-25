@@ -3,10 +3,18 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import educationImage from "@/assets/heroimages/educationimage.jpg"
+import homeLoan from "@/assets/heroimages/homeloan.jpg"
+import commercialProject from "@/assets/heroimages/commercialImage.jpg"
+import personalBusiness from "@/assets/heroimages/personalImage.jpg"
+import vehicleInstant from "@/assets/heroimages/vechileImage.jpg"
+import msmeImage from "@/assets/heroimages/msmeImage.jpg"
+import insuranceImage from "@/assets/heroimages/insuranceImage.jpg"
+import creditCardAccount from "@/assets/heroimages/creditCardImage.jpg"
 
 type Service = {
   title: string;
-  subtitle?: string;
+  subtitle?: string; 
   image: string;
   link?: string;
 };
@@ -14,16 +22,14 @@ type Service = {
 const services: Service[] = [
   { title: "Home Loan", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80&auto=format&fit=crop" },
   { title: "Industrial Project", image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80&auto=format&fit=crop" },
-  { title: "Commercial Project", image: "https://images.unsplash.com/photo-1507209696998-3c532be9b2b1?w=1200&q=80&auto=format&fit=crop" },
-  { title: "M.SM.E / SME", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80&auto=format&fit=crop" },
-  { title: "Personal, Business", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80&auto=format&fit=crop" },
-  { title: "Vehicle, Instant", image: "https://images.unsplash.com/photo-1483721310020-03333e577078?w=1200&q=80&auto=format&fit=crop" },
-  { title: "Investment", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80&auto=format&fit=crop" },
-  { title: "Education", image: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=1200&q=80&auto=format&fit=crop" },
+  { title: "Commercial Project", image: commercialProject },
+  { title: "M.SM.E / SME", image: msmeImage },
+  { title: "Personal, Business", image: personalBusiness },
+  { title: "Vehicle, Instant", image: vehicleInstant },
+  { title: "Investment", image: insuranceImage },
+  { title: "Education", image: educationImage },
   { title: "Insurance", image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80&auto=format&fit=crop" },
-  { title: "Mediclaim", image: "https://images.unsplash.com/photo-1580281658629-47d8bb39ab6c?w=1200&q=80&auto=format&fit=crop" },
-  { title: "Kiosk", image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1200&q=80&auto=format&fit=crop" },
-  { title: "Credit Card, Account Open", image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1200&q=80&auto=format&fit=crop" },
+  { title: "Credit Card, Account Open", image: creditCardAccount },
 ];
 
 const ServicesCarousel = () => {

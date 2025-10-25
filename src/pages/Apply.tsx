@@ -10,7 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
-import { CheckCircle2, FileText, Clock, Shield } from "lucide-react";
+import { CheckCircle2, FileText, Clock, Shield, MessageCircle } from "lucide-react";
 
 const loanApplicationSchema = z.object({
   fullName: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name too long"),
@@ -62,13 +62,44 @@ const Apply = () => {
     try {
       const validatedData = loanApplicationSchema.parse(formData);
       
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Create WhatsApp message
+      const whatsappMessage = `Hello Bank Fincorp Team,
+
+I would like to apply for a loan with the following details:
+
+*Personal Information:*
+Name: ${validatedData.fullName}
+Email: ${validatedData.email}
+Phone: ${validatedData.phone}
+City: ${validatedData.city}
+${validatedData.panNumber ? `PAN Number: ${validatedData.panNumber}` : ''}
+
+*Loan Details:*
+Loan Type: ${validatedData.loanType}
+Loan Amount: ₹${validatedData.loanAmount}
+
+*Employment Information:*
+Employment Type: ${validatedData.employmentType}
+Monthly Income: ₹${validatedData.monthlyIncome}
+
+${validatedData.message ? `*Additional Information:*
+${validatedData.message}` : ''}
+
+Please process my loan application and contact me for further details.
+
+Thank you!`;
+
+      // Encode message for URL
+      const encodedMessage = encodeURIComponent(whatsappMessage);
       
-      console.log("Form submitted:", validatedData);
+      // Create WhatsApp URL
+      const whatsappUrl = `https://wa.me/919522444141?text=${encodedMessage}`;
       
-      toast.success("Application submitted successfully!", {
-        description: "Our team will contact you within 24 hours.",
+      // Open WhatsApp in new tab
+      window.open(whatsappUrl, '_blank');
+      
+      toast.success("Redirecting to WhatsApp... Please send your application details there!", {
+        description: "Our team will process your application and contact you soon.",
       });
       
       // Reset form
@@ -152,7 +183,8 @@ const Apply = () => {
                 <CardHeader>
                   <CardTitle className="text-2xl">Loan Application Form</CardTitle>
                   <p className="text-muted-foreground">
-                    Please fill in your details accurately. All fields marked with * are mandatory.
+                    Please fill in your details accurately. All fields marked with * are mandatory. 
+                    After submission, you'll be redirected to WhatsApp with your application details prefilled.
                   </p>
                 </CardHeader>
                 <CardContent>
@@ -251,10 +283,16 @@ const Apply = () => {
                               <SelectValue placeholder="Select loan type" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="personal">Personal Loan</SelectItem>
+                              <SelectItem value="personal">Industrial Project Loan</SelectItem>
                               <SelectItem value="home">Home Loan</SelectItem>
-                              <SelectItem value="business">Business Loan</SelectItem>
-                              <SelectItem value="property">Loan Against Property</SelectItem>
+                              <SelectItem value="business">Commercial Project Loan</SelectItem>
+                              <SelectItem value="property">MSME/SME Loan</SelectItem>
+                              <SelectItem value="property">Personal Business Loan</SelectItem>
+                              <SelectItem value="property">Vehicle Instant Loan</SelectItem>
+                              <SelectItem value="property">Investment Loan</SelectItem>
+                              <SelectItem value="property">Education Loan</SelectItem>
+                              <SelectItem value="property">Insurance Loan</SelectItem>
+                              <SelectItem value="property">Credit Card Account Open</SelectItem>
                             </SelectContent>
                           </Select>
                           {errors.loanType && (
@@ -357,7 +395,7 @@ const Apply = () => {
                             I accept the terms and conditions *
                           </Label>
                           <p className="text-sm text-muted-foreground">
-                            By submitting this form, I agree to UrbanMoney's privacy policy and authorize them to contact me regarding my loan application.
+                            By submitting this form, I agree to Bankfincorp's privacy policy and authorize them to contact me regarding my loan application.
                           </p>
                           {errors.termsAccepted && (
                             <p className="text-sm text-destructive">{errors.termsAccepted}</p>
@@ -374,7 +412,8 @@ const Apply = () => {
                         className="flex-1 gradient-hero"
                         disabled={isSubmitting}
                       >
-                        {isSubmitting ? "Submitting..." : "Submit Application"}
+                        <MessageCircle className="mr-2" size={20} />
+                        {isSubmitting ? "Redirecting..." : "Submit via WhatsApp"}
                       </Button>
                       <Button
                         type="button"

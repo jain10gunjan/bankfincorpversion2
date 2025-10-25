@@ -85,19 +85,29 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.5;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold font-heading;
+    font-family: 'Google Sans', 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
   }
 
   .font-bold-custom {
-    font-family: 'Poiret One', 'Quicksand', system-ui, sans-serif;
-    font-weight: 700;
+    font-family: 'Google Sans', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
   }
 
   .font-display {
-    font-family: 'Poiret One', 'Quicksand', system-ui, sans-serif;
+    font-family: 'Google Sans', 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.025em;
   }
 }
 
@@ -119,7 +129,7 @@ All colors MUST be HSL.
   }
 
   .animate-marquee {
-    animation: marquee 30s linear infinite;
+    animation: marquee 60s linear infinite;
   }
 
   @keyframes marquee {
@@ -127,7 +137,7 @@ All colors MUST be HSL.
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-100%);
     }
   }
 

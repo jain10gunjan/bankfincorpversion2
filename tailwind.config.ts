@@ -13,12 +13,12 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ['Quicksand', 'system-ui', 'sans-serif'],
-        heading: ['Poiret One', 'Quicksand', 'system-ui', 'sans-serif'],
-        bold: ['Poiret One', 'Quicksand', 'system-ui', 'sans-serif'],
-        display: ['Poiret One', 'Quicksand', 'system-ui', 'sans-serif'],
-      },
+    fontFamily: {
+      sans: ['Inter', 'Roboto', 'system-ui', 'sans-serif'],
+      heading: ['Google Sans', 'Inter', 'system-ui', 'sans-serif'],
+      bold: ['Google Sans', 'Inter', 'system-ui', 'sans-serif'],
+      display: ['Google Sans', 'Inter', 'system-ui', 'sans-serif'],
+    },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

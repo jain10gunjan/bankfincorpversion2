@@ -36,27 +36,12 @@ const HeroSlider = () => {
 
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50 min-h-screen">
-      {/* Progress Bar */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-muted/20 z-20">
-        <div 
-          className="h-full bg-gradient-to-r from-primary to-accent transition-all duration-100 ease-linear"
-          style={{ 
-            width: `${((currentSlide + 1) / slides.length) * 100}%`,
-            animation: 'progress 5s linear infinite'
-          }}
-        />
-      </div>
-
-      <div className="container mx-auto px-4 py-8 md:py-16 h-full flex items-center">
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 py-4 md:py-12 h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
           {/* Content */}
           <div className="space-y-6 md:space-y-8 z-10 relative order-2 lg:order-1">
             {/* Slide Counter */}
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-              <span className="font-medium">{currentSlide + 1}</span>
-              <span>/</span>
-              <span>{slides.length}</span>
-            </div>
+             
 
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold-custom leading-tight">
@@ -94,7 +79,7 @@ const HeroSlider = () => {
           </div>
 
           {/* Image */}
-          <div className="relative group order-1 lg:order-2">
+          <div className="relative group order-1 lg:order-2 mb-8">
             <div className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl">
               <img
                 src={slides[currentSlide].image}
@@ -148,12 +133,6 @@ const HeroSlider = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes progress {
-          0% { width: 0%; }
-          100% { width: 100%; }
-        }
-      `}</style>
     </div>
   );
 };
