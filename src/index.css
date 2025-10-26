@@ -141,6 +141,25 @@ All colors MUST be HSL.
     }
   }
 
+  .animate-map-zoom-in {
+    animation: mapZoomIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  @keyframes mapZoomIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) translateY(30px);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.05) translateY(-5px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
