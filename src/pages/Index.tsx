@@ -8,8 +8,9 @@ import HowItWorks from "@/components/HowItWorks";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Shield, Zap, Users } from "lucide-react";
+import { ArrowRight, CheckCircle2, Shield, Zap, Users, MapPin, Clock, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import mapImage from "@/assets/heroimages/mapImage.png";
 // Using high-quality internet images instead of local assets
 const personalLoanImg = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80&auto=format&fit=crop";
 const homeLoanImg = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80&auto=format&fit=crop";
@@ -312,6 +313,44 @@ const Index = () => {
 
         <Testimonials />
         <FAQ />
+
+        {/* Map Section */}
+        <section className="py-16 bg-gradient-to-b from-muted/20 to-transparent">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">We Service PAN India</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Our financial services are available across all major cities in India
+              </p>
+            </div>
+
+            <div className="max-w-7xl mx-auto">
+              <Card className="overflow-hidden shadow-elevated hover:shadow-2xl transition-shadow">
+                <div className="relative">
+                  <img 
+                    src={mapImage} 
+                    alt="BankFincorp PAN India Service Coverage Map" 
+                    className="w-full h-auto object-contain"
+                    style={{ minHeight: '400px' }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <MapPin className="text-primary" size={24} />
+                        <span className="font-bold text-xl">Head Office Location</span>
+                      </div>
+                      <p className="text-muted-foreground text-lg">
+                        B - Bank Fincorp Unit-1, Shop No. C/16, Sudarshan Complex<br />
+                        Near Police Post, Pithampur Sector-2, District Dhar, MP 454775
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
