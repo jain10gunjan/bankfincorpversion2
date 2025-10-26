@@ -29,6 +29,8 @@ import {
   FileText,
 } from "lucide-react";
 import { bankFincorpServices } from "@/lib/utils";
+import homeLoan from "@/assets/heroimages/homeloan.jpg";
+import personalImage from "@/assets/heroimages/personalImage.jpg";
 
 // Icon mapping for services
 const serviceIcons = {
@@ -123,7 +125,7 @@ const Services = () => {
               <Card className="group overflow-hidden shadow-elevated hover:shadow-2xl transition-all duration-500">
                 <div className="relative h-64 bg-gradient-to-br from-blue-500 to-blue-600">
                   <img 
-                    src="/src/assets/heroimages/homeloan.jpg" 
+                    src={homeLoan}
                     alt="Home Loan" 
                     className="w-full h-full object-cover"
                   />
@@ -178,7 +180,7 @@ const Services = () => {
               <Card className="group overflow-hidden shadow-elevated hover:shadow-2xl transition-all duration-500">
                 <div className="relative h-64 bg-gradient-to-br from-green-500 to-green-600">
                   <img 
-                    src="/src/assets/heroimages/personalImage.jpg" 
+                    src={personalImage} 
                     alt="Personal Loan" 
                     className="w-full h-full object-cover"
                   />
