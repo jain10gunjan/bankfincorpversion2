@@ -25,4 +25,6 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
+  // Ensure proper base path for deployment
+  base: "/",
 }));
