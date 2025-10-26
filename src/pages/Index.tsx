@@ -333,19 +333,7 @@ const Index = () => {
                     className="w-full h-auto object-contain"
                     style={{ minHeight: '400px' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6">
-                      <div className="flex items-center gap-3 mb-3">
-                        <MapPin className="text-primary" size={24} />
-                        <span className="font-bold text-xl">Head Office Location</span>
-                      </div>
-                      <p className="text-muted-foreground text-lg">
-                        B - Bank Fincorp Unit-1, Shop No. C/16, Sudarshan Complex<br />
-                        Near Police Post, Pithampur Sector-2, District Dhar, MP 454775
-                      </p>
-                    </div>
-                  </div>
+                  
                 </div>
               </Card>
             </div>
