@@ -39,7 +39,7 @@ const HeroSlider = () => {
       <div className="container mx-auto px-6 md:px-8 lg:px-12 py-4 md:py-12 h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
           {/* Content */}
-          <div className="space-y-6 md:space-y-8 z-10 relative order-2 lg:order-1">
+          <div className="space-y-6 md:space-y-8 z-10 relative order-1 lg:order-1">
             {/* Slide Counter */}
              
 
@@ -79,7 +79,7 @@ const HeroSlider = () => {
           </div>
 
           {/* Image */}
-          <div className="relative group order-1 lg:order-2 mb-8">
+          <div className="relative group order-2 lg:order-2 mb-8">
             <div className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl">
               <img
                 src={slides[currentSlide].image}

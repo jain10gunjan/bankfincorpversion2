@@ -6,6 +6,8 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import HowItWorks from "@/components/HowItWorks";
 import ServicesCarousel from "@/components/ServicesCarousel";
+import MobileBottomMenu from "@/components/MobileBottomMenu";
+import FloatingButtons from "@/components/FloatingButtons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Shield, Zap, Users, MapPin, Clock, Phone } from "lucide-react";
@@ -99,7 +101,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col pb-16 md:pb-0">
       <Navbar />
       
       <main className="flex-1">
@@ -480,6 +482,8 @@ const Index = () => {
       </main>
 
       <Footer />
+      <MobileBottomMenu />
+      <FloatingButtons />
     </div>
   );
 };

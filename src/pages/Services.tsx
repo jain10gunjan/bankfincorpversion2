@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileBottomMenu from "@/components/MobileBottomMenu";
+import FloatingButtons from "@/components/FloatingButtons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -104,7 +106,7 @@ const additionalServices = [
 
 const Services = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col pb-16 md:pb-0">
       <Navbar />
       
       <main className="flex-1">
@@ -375,6 +377,8 @@ const Services = () => {
       </main>
 
       <Footer />
+      <MobileBottomMenu />
+      <FloatingButtons />
     </div>
   );
 };

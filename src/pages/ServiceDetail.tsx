@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileBottomMenu from "@/components/MobileBottomMenu";
+import FloatingButtons from "@/components/FloatingButtons";
 import { useParams, Link } from "react-router-dom";
 import { bankFincorpServices } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -48,7 +50,7 @@ const ServiceDetail = () => {
   } : null;
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col pb-16 md:pb-0">
       <Navbar />
 
       <main className="flex-1">
@@ -218,6 +220,8 @@ const ServiceDetail = () => {
       </main>
 
       <Footer />
+      <MobileBottomMenu />
+      <FloatingButtons />
     </div>
   );
 };

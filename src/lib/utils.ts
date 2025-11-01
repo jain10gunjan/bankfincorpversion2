@@ -31,7 +31,7 @@ export const bankFincorpServices: ServiceItem[] = [
     title: "Home Loan",
     tagline: "Simpler, Faster, Friendlier",
     description: "Own your dream home with attractive interest rates and flexible tenure.",
-    image: homeLoan,
+    image: "https://cdn-blagp.nitrocdn.com/JDkHtUSBboKvLbxmwcDuGTKmkyGKFawF/assets/images/optimized/rev-4f7ecbe/loanwize.com.au/wp-content/uploads/2020/10/home-loan-1.jpg",
     rate: "7.60%",
     features: ["Loan up to 90% of property value", "Tenure up to 30 years", "Tax benefits"],
     eligibility: ["Age 21-65", "Credit score 750+", "Minimum income criteria"],
@@ -40,7 +40,7 @@ export const bankFincorpServices: ServiceItem[] = [
     id: "industrial-project",
     title: "Industrial Project",
     description: "Finance for machinery, plant setup, and capacity expansion.",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&auto=format&fit=crop",
+    image: "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw0OTg5ODMzOTM0MS1wdWJsaWMtaW1hZ2Uta293c2toMmEuanBn.jpg",
   },
   {
     id: "commercial-project",
@@ -65,7 +65,7 @@ export const bankFincorpServices: ServiceItem[] = [
     id: "vehicle-instant",
     title: "Vehicle, Instant",
     description: "Quick loans for new and used vehicles with instant decisioning.",
-    image: vehicleInstant,
+    image: "https://images.caxton.co.za/wp-content/uploads/sites/56/2021/10/16689214063_aae190af_84325_tn.jpg",
   },
   {
     id: "investment",
@@ -89,6 +89,6 @@ export const bankFincorpServices: ServiceItem[] = [
     id: "credit-card-account",
     title: "Credit Card, Account Open",
     description: "Compare credit cards and instantly open accounts online.",
-    image: creditCardAccount,
+    image: "https://wjla.com/resources/media/7a447c4e-e8e8-4351-a6c4-6838a1e58bec-large16x9_CreditCardsCreativeCommons.jpeg?1649281699329",
   },
 ];

@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileBottomMenu from "@/components/MobileBottomMenu";
+import FloatingButtons from "@/components/FloatingButtons";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -106,7 +108,7 @@ const Calculators = () => {
   const loanEligibility = calculateLoanEligibility(monthlyIncome, existingEMI, creditScore);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col pb-16 md:pb-0">
       <Navbar />
       
       <main className="flex-1">
@@ -727,6 +729,8 @@ const Calculators = () => {
       </main>
 
       <Footer />
+      <MobileBottomMenu />
+      <FloatingButtons />
     </div>
   );
 };

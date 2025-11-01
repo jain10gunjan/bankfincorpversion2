@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileBottomMenu from "@/components/MobileBottomMenu";
+import FloatingButtons from "@/components/FloatingButtons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Target, Eye, Award, Users, TrendingUp, Shield, Calendar, Building, Globe, Zap } from "lucide-react";
@@ -75,7 +77,7 @@ const timelineData = [
 
 const About = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col pb-16 md:pb-0">
       <Navbar />
       
       <main className="flex-1">
@@ -274,6 +276,8 @@ const About = () => {
       </main>
 
       <Footer />
+      <MobileBottomMenu />
+      <FloatingButtons />
     </div>
   );
 };

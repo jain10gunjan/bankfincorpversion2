@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileBottomMenu from "@/components/MobileBottomMenu";
+import FloatingButtons from "@/components/FloatingButtons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,7 +16,7 @@ const contactInfo = [
     icon: Phone,
     title: "Call Us",
     details: "1800 120 8921",
-    subdetails: "Mon-Sat, 9 AM - 6 PM",
+    subdetails: "Mon-Sat, 10 AM - 5 PM",
   },
   {
     icon: Mail,
@@ -83,7 +85,7 @@ Thank you!`;
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col pb-16 md:pb-0">
       <Navbar />
       
       <main className="flex-1">
@@ -316,6 +318,8 @@ Thank you!`;
       </main>
 
       <Footer />
+      <MobileBottomMenu />
+      <FloatingButtons />
     </div>
   );
 };
