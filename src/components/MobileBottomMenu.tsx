@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Home, Menu, Calculator, Phone, Briefcase, MessageCircle, Bot } from "lucide-react";
+import { Home, Menu, Calculator, Phone, Briefcase, MessageCircle, Bot, Users } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { bankFincorpServices } from "@/lib/utils";
 
@@ -31,68 +31,102 @@ const MobileBottomMenu = () => {
     // Example: window.open('your-chatbot-url', '_blank');
   };
 
+  const handleDSAClick = () => {
+    alert("DSA feature coming soon!");
+  };
+
   const isActive = (path: string) => location.pathname === path;
 
   return (
     <>
       {/* Sticky Bottom Menu - Mobile Only */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t shadow-lg md:hidden">
-        <div className="flex items-center justify-around h-16 px-2">
-          {/* Left Navigation Item */}
+        <div className="flex items-center justify-between h-16 px-1">
+          {/* Menu Button - Left Side */}
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            className="flex flex-col items-center justify-center min-w-[56px] h-full transition-colors"
+          >
+            <div className="w-9 h-9 rounded-full gradient-hero flex items-center justify-center shadow-md mb-0.5">
+              <Menu size={18} className="text-white" />
+            </div>
+            <span className="text-[10px] leading-tight text-primary font-medium">Menu</span>
+          </button>
+
+          {/* Home */}
           <Link
             to="/"
-            className={`flex flex-col items-center justify-center flex-1 h-full transition-colors ${
+            className={`flex flex-col items-center justify-center min-w-[56px] h-full transition-colors ${
               isActive("/") ? "text-primary" : "text-muted-foreground"
             }`}
           >
-            <Home size={20} />
-            <span className="text-xs mt-0.5">Home</span>
+            <div className="w-9 h-9 rounded-full bg-muted/50 flex items-center justify-center mb-0.5">
+              <Home size={18} />
+            </div>
+            <span className="text-[10px] leading-tight">Home</span>
           </Link>
 
           {/* Services */}
           <Link
             to="/services"
-            className={`flex flex-col items-center justify-center flex-1 h-full transition-colors ${
+            className={`flex flex-col items-center justify-center min-w-[56px] h-full transition-colors ${
               isActive("/services") ? "text-primary" : "text-muted-foreground"
             }`}
           >
-            <Briefcase size={20} />
-            <span className="text-xs mt-0.5">Services</span>
+            <div className="w-9 h-9 rounded-full bg-muted/50 flex items-center justify-center mb-0.5">
+              <Briefcase size={18} />
+            </div>
+            <span className="text-[10px] leading-tight">Services</span>
           </Link>
 
-          {/* Center Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            className="flex flex-col items-center justify-center h-full px-3"
+          {/* Contact Us */}
+          <Link
+            to="/contact"
+            className={`flex flex-col items-center justify-center min-w-[56px] h-full transition-colors ${
+              isActive("/contact") ? "text-primary" : "text-muted-foreground"
+            }`}
           >
-            <div className="w-12 h-12 rounded-full gradient-hero flex items-center justify-center shadow-lg -mt-2">
-              <Menu size={22} className="text-white" />
+            <div className="w-9 h-9 rounded-full bg-muted/50 flex items-center justify-center mb-0.5">
+              <Phone size={18} />
             </div>
-            <span className="text-xs mt-0.5 text-primary">Menu</span>
-          </button>
+            <span className="text-[10px] leading-tight">Contact</span>
+          </Link>
 
           {/* WhatsApp Button */}
           <button
             onClick={handleWhatsAppClick}
-            className="flex flex-col items-center justify-center flex-1 h-full transition-colors"
+            className="flex flex-col items-center justify-center min-w-[56px] h-full transition-colors"
             aria-label="Contact us on WhatsApp"
           >
-            <div className="w-8 h-8 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center transition-colors">
+            <div className="w-9 h-9 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center transition-colors mb-0.5 shadow-sm">
               <MessageCircle size={18} className="text-white" />
             </div>
-            <span className="text-xs mt-0.5 text-muted-foreground">WhatsApp</span>
+            <span className="text-[10px] leading-tight text-muted-foreground">WhatsApp</span>
           </button>
 
           {/* Chatbot Button */}
           <button
             onClick={handleChatbotClick}
-            className="flex flex-col items-center justify-center flex-1 h-full transition-colors"
+            className="flex flex-col items-center justify-center min-w-[56px] h-full transition-colors"
             aria-label="Open Chatbot"
           >
-            <div className="w-8 h-8 rounded-full gradient-hero flex items-center justify-center transition-colors">
+            <div className="w-9 h-9 rounded-full gradient-hero flex items-center justify-center transition-colors mb-0.5 shadow-sm">
               <Bot size={18} className="text-white" />
             </div>
-            <span className="text-xs mt-0.5 text-muted-foreground">Chat</span>
+            <span className="text-[10px] leading-tight text-muted-foreground">Chat</span>
+          </button>
+
+          {/* DSA Button - Coming Soon */}
+          <button
+            onClick={handleDSAClick}
+            className="flex flex-col items-center justify-center min-w-[56px] h-full transition-colors opacity-70"
+            aria-label="DSA - Coming Soon"
+          >
+            <div className="w-9 h-9 rounded-full bg-muted flex items-center justify-center transition-colors mb-0.5">
+              <Users size={18} className="text-muted-foreground" />
+            </div>
+            <span className="text-[10px] leading-tight text-muted-foreground">DSA</span>
+            <span className="text-[9px] leading-tight text-muted-foreground/70">Soon</span>
           </button>
         </div>
       </div>

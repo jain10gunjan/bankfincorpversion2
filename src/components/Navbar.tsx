@@ -43,6 +43,18 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            {/* DSA Button - Coming Soon */}
+            <button
+              onClick={() => alert("DSA feature coming soon!")}
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group cursor-pointer opacity-80"
+            >
+              <span className="relative">
+                DSA
+                <span className="absolute -top-2 -right-6 text-[9px] text-primary font-bold opacity-100">
+                  Soon
+                </span>
+              </span>
+            </button>
             <Link to={applyButtonPath}>
               <Button className="gradient-hero">Apply Now</Button>
             </Link>
