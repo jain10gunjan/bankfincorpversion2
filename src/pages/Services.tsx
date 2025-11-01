@@ -2,107 +2,38 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileBottomMenu from "@/components/MobileBottomMenu";
 import FloatingButtons from "@/components/FloatingButtons";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import {
-  CreditCard,
-  Home,
-  Briefcase,
-  TrendingUp,
-  Calculator,
-  CheckCircle2,
-  ArrowRight,
-  Building,
-  Car,
-  GraduationCap,
-  Shield,
-  Stethoscope,
-  Monitor,
-  Users,
-  Star,
-  Clock,
-  Award,
-  Target,
-  Phone,
-  Zap,
-  DollarSign,
-  Percent,
+import { 
+  Home, 
+  Briefcase, 
+  Car, 
+  GraduationCap, 
+  Shield, 
+  TrendingUp, 
   FileText,
+  Building,
+  CreditCard,
+  ArrowRight,
+  CheckCircle2,
+  Network
 } from "lucide-react";
-import { bankFincorpServices } from "@/lib/utils";
-import homeLoan from "@/assets/heroimages/homeloan.jpg";
-import personalImage from "@/assets/heroimages/personalImage.jpg";
+import { serviceCategories } from "@/lib/utils";
 
-// Icon mapping for services
-const serviceIcons = {
-  "home-loan": Home,
-  "industrial-project": Building,
-  "commercial-project": Building,
-  "msme": Briefcase,
-  "personal-business": CreditCard,
-  "vehicle-instant": Car,
-  "investment": TrendingUp,
-  "education": GraduationCap,
-  "insurance": Shield,
-  "mediclaim": Stethoscope,
-  "kiosk": Monitor,
-  "credit-card-account": CreditCard,
+// Icon mapping for categories
+const categoryIcons = {
+  "home-loans-commercial-property": Home,
+  "personal-instant-loans-credit-cards": CreditCard,
+  "business-loans-accounts": Briefcase,
+  "specialized-loans-franchised": Building,
+  "vehicle-loans": Car,
+  "investment-education-loans": GraduationCap,
+  "insurance-mediclaim": Shield,
+  "taxation-utility-services": FileText,
+  "bank-partners": Network,
+  "kiosk-services": Building,
 };
-
-// Enhanced service data with more details
-const enhancedServices = bankFincorpServices.map(service => ({
-  ...service,
-  icon: serviceIcons[service.id as keyof typeof serviceIcons] || CreditCard,
-  rate: service.rate || "Contact for rates",
-  features: service.features || [
-    "Quick approval process",
-    "Competitive interest rates", 
-    "Flexible repayment options",
-    "Minimal documentation",
-    "Digital application process",
-    "Expert guidance"
-  ],
-  eligibility: service.eligibility || [
-    "Age: 21-65 years",
-    "Stable income source",
-    "Good credit history",
-    "Valid documentation"
-  ],
-  benefits: [
-    "Fast processing",
-    "Low interest rates",
-    "Flexible tenure",
-    "No hidden charges"
-  ],
-  documents: [
-    "Identity proof",
-    "Address proof", 
-    "Income proof",
-    "Bank statements"
-  ]
-}));
-
-const additionalServices = [
-  {
-    icon: Calculator,
-    title: "Credit Score Check",
-    description: "Get your free credit score and report worth ₹500",
-    link: "/calculators",
-  },
-  {
-    icon: CreditCard,
-    title: "Credit Cards",
-    description: "Compare and apply for the best credit cards",
-    link: "/services",
-  },
-  {
-    icon: TrendingUp,
-    title: "Investment Plans",
-    description: "Grow your wealth with smart investment options",
-    link: "/services",
-  },
-];
 
 const Services = () => {
   return (
@@ -110,263 +41,29 @@ const Services = () => {
       <Navbar />
       
       <main className="flex-1">
-        {/* Hero Section with Image */}
-       
-        {/* Featured Services with Images */}
-        <section className="py-20 bg-white">
+        {/* Hero Section */}
+        <section className="gradient-hero text-white py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Core Services</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Discover our most popular financial products designed to meet your specific needs
-              </p>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-12 mb-16">
-              {/* Home Loan */}
-              <Card className="group overflow-hidden shadow-elevated hover:shadow-2xl transition-all duration-500">
-                <div className="relative h-64 bg-gradient-to-br from-blue-500 to-blue-600">
-                  <img 
-                    src={homeLoan}
-                    alt="Home Loan" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 text-white">
-                    <h3 className="text-3xl font-bold mb-2">Home Loan</h3>
-                    <p className="text-lg text-white/90">Starting from 8.5% p.a.</p>
-                  </div>
-                </div>
-                <CardContent className="p-8">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-                        <Home className="text-blue-600" size={24} />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-lg">Quick Processing</h4>
-                        <p className="text-sm text-muted-foreground">Get approved in 24 hours</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
-                        <Percent className="text-green-600" size={24} />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-lg">Low Interest Rates</h4>
-                        <p className="text-sm text-muted-foreground">Best rates in the market</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
-                        <FileText className="text-purple-600" size={24} />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-lg">Minimal Documentation</h4>
-                        <p className="text-sm text-muted-foreground">Simple application process</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-6 flex gap-3">
-                    <Link to="/apply" className="flex-1">
-                      <Button className="w-full gradient-hero">Apply Now</Button>
-                    </Link>
-                    <Link to="/calculators">
-                      <Button variant="outline" className="px-6">Calculate EMI</Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Personal Loan */}
-              <Card className="group overflow-hidden shadow-elevated hover:shadow-2xl transition-all duration-500">
-                <div className="relative h-64 bg-gradient-to-br from-green-500 to-green-600">
-                  <img 
-                    src={personalImage} 
-                    alt="Personal Loan" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 text-white">
-                    <h3 className="text-3xl font-bold mb-2">Personal Loan</h3>
-                    <p className="text-lg text-white/90">Starting from 10.5% p.a.</p>
-                  </div>
-                </div>
-                <CardContent className="p-8">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
-                        <Zap className="text-green-600" size={24} />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-lg">Instant Approval</h4>
-                        <p className="text-sm text-muted-foreground">Get funds in 2 hours</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-                        <DollarSign className="text-blue-600" size={24} />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-lg">Up to ₹50 Lakhs</h4>
-                        <p className="text-sm text-muted-foreground">High loan amounts available</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center">
-                        <Clock className="text-orange-600" size={24} />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-lg">Flexible Tenure</h4>
-                        <p className="text-sm text-muted-foreground">Choose your repayment period</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-6 flex gap-3">
-                    <Link to="/apply" className="flex-1">
-                      <Button className="w-full gradient-hero">Apply Now</Button>
-                    </Link>
-                    <Link to="/calculators">
-                      <Button variant="outline" className="px-6">Calculate EMI</Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* All Services Grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {enhancedServices.slice(0, 8).map((service) => (
-                <Card key={service.id} className="group hover:shadow-elevated transition-all duration-300 hover:-translate-y-2 border-0 shadow-card">
-                  <CardContent className="p-6">
-                    <div className="text-center">
-                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-hero mb-4 group-hover:scale-110 transition-transform">
-                        <service.icon className="text-white" size={28} />
-                      </div>
-                      
-                      <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{service.description}</p>
-                      
-                      {service.rate && (
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-4">
-                          <Star className="w-4 h-4" />
-                          {service.rate}
-                        </div>
-                      )}
-
-                      <div className="space-y-2 mb-6">
-                        {service.features.slice(0, 2).map((feature, index) => (
-                          <div key={index} className="flex items-center gap-2 text-sm">
-                            <CheckCircle2 className="text-primary flex-shrink-0" size={16} />
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="flex flex-col gap-2">
-                        <Link to={`/services/${service.id}`}>
-                          <Button className="w-full gradient-hero group-hover:shadow-lg transition-shadow">
-                            Learn More
-                            <ArrowRight className="ml-2" size={16} />
-                          </Button>
-                        </Link>
-                        <Link to="/apply">
-                          <Button variant="outline" className="w-full">
-                            Apply Now
-                          </Button>
-                        </Link>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">Why Choose BankFincorp?</h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  We're committed to providing the best financial solutions with unmatched service quality and customer satisfaction
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <Card className="shadow-card hover:shadow-elevated transition-shadow text-center group">
-                  <CardContent className="p-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-hero mb-6 group-hover:scale-110 transition-transform">
-                      <Clock className="text-white" size={32} />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4">Quick Approval</h3>
-                    <p className="text-muted-foreground">
-                      Get instant approvals with our streamlined digital process and AI-powered assessment
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="shadow-card hover:shadow-elevated transition-shadow text-center group">
-                  <CardContent className="p-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-hero mb-6 group-hover:scale-110 transition-transform">
-                      <Award className="text-white" size={32} />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4">Best Rates</h3>
-                    <p className="text-muted-foreground">
-                      Compare offers from 50+ lenders to get the best deal with our competitive rate comparison
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="shadow-card hover:shadow-elevated transition-shadow text-center group">
-                  <CardContent className="p-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-hero mb-6 group-hover:scale-110 transition-transform">
-                      <Shield className="text-white" size={32} />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4">100% Paperless</h3>
-                    <p className="text-muted-foreground">
-                      Complete your application online without any paperwork using our secure digital platform
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="shadow-card hover:shadow-elevated transition-shadow text-center group">
-                  <CardContent className="p-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-hero mb-6 group-hover:scale-110 transition-transform">
-                      <Users className="text-white" size={32} />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4">Expert Guidance</h3>
-                    <p className="text-muted-foreground">
-                      Get personalized advice from our certified financial experts and loan specialists
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 gradient-hero text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
-          <div className="relative container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6">Ready to Get Started?</h2>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                Simplifying Your Financial Journey
+              </h1>
               <p className="text-xl md:text-2xl text-white/90 mb-8">
-                Apply for your loan today and get approved within 24 hours with our streamlined process
+                With a trusted partner offering 350+ Bank & NBFC solutions
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/apply">
-                  <Button size="lg" className="bg-yellow-400 text-black hover:bg-yellow-300 font-bold px-8 py-4 text-lg">
+                  <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold px-8">
                     Apply Now
                     <ArrowRight className="ml-2" size={20} />
                   </Button>
                 </Link>
                 <Link to="/contact">
-                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-4 text-lg">
-                    <Phone className="mr-2" size={20} />
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="bg-white text-primary hover:bg-white/90 font-semibold px-8"
+                  >
                     Contact Us
                   </Button>
                 </Link>
@@ -374,6 +71,108 @@ const Services = () => {
             </div>
           </div>
         </section>
+
+        {/* Service Categories */}
+        <section className="py-16 md:py-20 bg-gradient-to-b from-background via-muted/30 to-background">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Comprehensive Services</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Explore our wide range of financial products and services tailored to meet your every need
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {serviceCategories.map((category, index) => {
+                const Icon = categoryIcons[category.id as keyof typeof categoryIcons] || Building;
+                
+                return (
+                  <Card 
+                    key={category.id} 
+                    className="group hover:shadow-elevated transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-border/50 hover:border-primary/30 bg-card"
+                  >
+                    <CardHeader className={`bg-gradient-to-br ${category.color} text-white p-6 relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent group-hover:from-black/5 transition-all"></div>
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                      <div className="relative z-10">
+                        <div className="flex items-start gap-4 mb-3">
+                          <div className="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                            <Icon className="text-white" size={28} />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold leading-tight mb-1">{category.title}</h3>
+                            <p className="text-white/90 text-sm leading-relaxed">{category.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    
+                    <CardContent className="p-6 bg-background">
+                      <div className="space-y-2.5 mb-6 min-h-[200px]">
+                        {category.services.slice(0, 8).map((service, idx) => (
+                          <div 
+                            key={idx} 
+                            className="flex items-start gap-2.5 text-sm text-muted-foreground group-hover:text-foreground transition-colors"
+                          >
+                            <CheckCircle2 
+                              className="text-primary flex-shrink-0 mt-0.5 w-4 h-4 group-hover:scale-110 transition-transform" 
+                              size={16} 
+                            />
+                            <span className="leading-relaxed">{service}</span>
+                          </div>
+                        ))}
+                        {category.services.length > 8 && (
+                          <div className="text-sm font-semibold text-primary pt-3 border-t border-border">
+                            +{category.services.length - 8} More Services
+                          </div>
+                        )}
+                      </div>
+                      
+                      <div className="flex gap-3 pt-4 border-t border-border">
+                        <Link to="/apply" className="flex-1">
+                          <Button className="w-full gradient-hero text-sm font-semibold hover:shadow-lg transition-shadow">
+                            Apply Now
+                            <ArrowRight className="ml-2" size={16} />
+                          </Button>
+                        </Link>
+                        <Link to="/contact" className="flex-1">
+                          <Button 
+                            variant="outline" 
+                            className="w-full text-sm hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+                          >
+                            Learn More
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-16 bg-gradient-to-br from-primary/5 to-primary/10">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">350+</div>
+                <div className="text-lg text-muted-foreground">Bank & NBFC Partners</div>
+              </div>
+              <div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">300+</div>
+                <div className="text-lg text-muted-foreground">Online Services Available</div>
+              </div>
+              <div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">285+</div>
+                <div className="text-lg text-muted-foreground">Financial Portals Unlocked</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
       </main>
 
       <Footer />

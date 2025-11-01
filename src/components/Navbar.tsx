@@ -21,7 +21,8 @@ const Navbar = () => {
     <nav className="bg-background border-b sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
             <img 
               src={logo} 
               alt="BankFincorp Logo" 
@@ -31,38 +32,47 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-6 flex-1 justify-center">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(item.path) ? "text-primary" : "text-muted-foreground"
+                className={`text-sm font-medium transition-colors whitespace-nowrap ${
+                  isActive(item.path) 
+                    ? "text-primary" 
+                    : "text-muted-foreground hover:text-primary"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            {/* DSA Button - Coming Soon */}
-            <button
+          </div>
+
+          {/* Desktop Action Buttons */}
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
+            {/* DSA Button */}
+            <Button
               onClick={() => alert("DSA feature coming soon!")}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group cursor-pointer opacity-80"
+              className="gradient-hero relative h-10 px-4"
             >
-              <span className="relative">
-                DSA
-                <span className="absolute -top-2 -right-6 text-[9px] text-primary font-bold opacity-100">
-                  Soon
-                </span>
+              DSA
+              <span className="absolute -top-1.5 -right-1.5 bg-yellow-400 text-gray-900 text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow-sm">
+                Soon
               </span>
-            </button>
+            </Button>
+            {/* Apply Now Button */}
             <Link to={applyButtonPath}>
-              <Button className="gradient-hero">Apply Now</Button>
+              <Button className="gradient-hero h-10 px-4">
+                Apply Now
+              </Button>
             </Link>
           </div>
 
           {/* Mobile Apply Button */}
-          <Link to={applyButtonPath} className="md:hidden">
-            <Button className="gradient-hero">Apply Now</Button>
+          <Link to={applyButtonPath} className="md:hidden flex-shrink-0">
+            <Button className="gradient-hero h-10 px-4 text-sm">
+              Apply Now
+            </Button>
           </Link>
         </div>
       </div>
