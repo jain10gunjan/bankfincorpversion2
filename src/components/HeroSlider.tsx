@@ -1,34 +1,18 @@
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, CheckCircle } from "lucide-react";
+import { bankFincorpServices } from "@/lib/utils";
 
 // Mock data for demonstration
-const slides = [
-  {
-    title: "Explore",
-    highlight: "Personal Loan",
-    subtitle: "Get instant personal loans with minimal documentation",
-    features: ["Best Rates", "Digital Process", "Quick Approval"],
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
-    cta: "Explore",
-  },
-  {
-    title: "Explore",
-    highlight: "Home Loan",
-    subtitle: "Make your dream home a reality with easy EMIs",
-    features: ["Best Rates", "Digital Process", "Quick Approval"],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
-    cta: "Explore",
-  },
-  {
-    title: "Explore",
-    highlight: "Business Loan",
-    subtitle: "Grow your business with flexible financing options",
-    features: ["Best Rates", "Digital Process", "Quick Approval"],
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
-    cta: "Explore",
-  },
-];
+const slides = bankFincorpServices.slice(0, 10).map((s) => ({
+  title: "Explore",
+  highlight: s.title,
+  subtitle: s.tagline || s.description,
+  features: ["Best Rates", "Digital Process", "Quick Approval"],
+  image: s.image,
+  cta: "Explore",
+  link: `/services/${s.id}`,
+}));
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -54,7 +38,7 @@ const HeroSlider = () => {
     <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50">
       {/* Mobile Layout */}
       <div className="lg:hidden h-screen flex flex-col">
-        <div className="flex-1 flex flex-col px-4 py-6 overflow-hidden">
+        <div className="flex-1 flex flex-col px-4 pt-6 overflow-hidden">
           {/* Content Section */}
           <div className="flex-shrink-0 space-y-3 mb-4">
             {/* Title */}
@@ -92,17 +76,18 @@ const HeroSlider = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex gap-3 pb-2">
-              <Button className="flex-1 gradient-hero text-white text-sm font-semibold py-5 hover:scale-105 transition-transform">
+              {/* CTA Buttons */}
+            <div className="flex gap-3 pb-2 mt-4">
+              <Button className="flex-1 gradient-hero text-white text-sm font-semibold py-2 hover:scale-105 transition-transform">
                 {slides[currentSlide].cta}
               </Button>
               <Button variant="outline" className="flex-1 text-sm font-semibold py-5 border-2">
                 All Services
               </Button>
             </div>
+            </div>
+
+            
 
             {/* Navigation */}
             <div className="flex items-center justify-center gap-3 pb-2">
