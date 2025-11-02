@@ -1,4 +1,5 @@
-import { MessageCircle, Bot } from "lucide-react";
+import { Bot } from "lucide-react";
+import whatsappImage from "@/assets/heroimages/whatsapp.png";
 
 const FloatingButtons = () => {
   const whatsappNumber = "919522444141";
@@ -22,10 +23,14 @@ const FloatingButtons = () => {
       {/* WhatsApp Button */}
       <button
         onClick={handleWhatsAppClick}
-        className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+        className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group overflow-hidden"
         aria-label="Contact us on WhatsApp"
       >
-        <MessageCircle size={24} className="group-hover:scale-110 transition-transform" />
+        <img 
+          src={whatsappImage} 
+          alt="WhatsApp" 
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform"
+        />
         <span className="absolute -top-12 right-0 bg-gray-900 text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           WhatsApp
         </span>

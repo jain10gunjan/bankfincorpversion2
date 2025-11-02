@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Home, Menu, Calculator, Phone, Briefcase, MessageCircle, Bot, Users } from "lucide-react";
+import { Home, Menu, Calculator, Phone, Briefcase, Bot, Users } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { bankFincorpServices } from "@/lib/utils";
+import whatsappImage from "@/assets/heroimages/whatsapp.png";
 
 const MobileBottomMenu = () => {
   const location = useLocation();
@@ -98,8 +99,12 @@ const MobileBottomMenu = () => {
             className="flex flex-col items-center justify-center flex-1 min-w-0 h-full transition-colors px-0.5"
             aria-label="Contact us on WhatsApp"
           >
-            <div className="w-8 h-8 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center transition-colors mb-0.5 shadow-sm">
-              <MessageCircle size={16} className="text-white" />
+            <div className="w-8 h-8 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center transition-colors mb-0.5 shadow-sm overflow-hidden">
+              <img 
+                src={whatsappImage} 
+                alt="WhatsApp" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="text-[9px] leading-tight text-muted-foreground whitespace-nowrap">WhatsApp</span>
           </button>

@@ -3,14 +3,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import educationImage from "@/assets/heroimages/educationimage.jpg"
-import homeLoan from "@/assets/heroimages/homeloan.jpg"
-import commercialProject from "@/assets/heroimages/commercialImage.jpg"
-import personalBusiness from "@/assets/heroimages/personalImage.jpg"
-import vehicleInstant from "@/assets/heroimages/vechileImage.jpg"
-import msmeImage from "@/assets/heroimages/msmeImage.jpg"
-import insuranceImage from "@/assets/heroimages/insuranceImage.jpg"
-import creditCardAccount from "@/assets/heroimages/creditCardImage.jpg"
+import educationImage from "@/assets/heroimages/educationimage.png"
+import homeLoan from "@/assets/heroimages/homeloan.png"
+import commercialProject from "@/assets/heroimages/commercialImage.png"
+import personalBusiness from "@/assets/heroimages/personalImage.png"
+import vehicleInstant from "@/assets/heroimages/vechileImage.png"
+import msmeImage from "@/assets/heroimages/msmeImage.png"
+import insuranceImage from "@/assets/heroimages/insuranceImage.png"
+import creditCardAccount from "@/assets/heroimages/creditCardImage.png"
 
 type Service = {
   title: string;

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileBottomMenu from "@/components/MobileBottomMenu";
@@ -17,7 +18,9 @@ import {
   CreditCard,
   ArrowRight,
   CheckCircle2,
-  Network
+  Network,
+  ChevronDown,
+  ChevronUp
 } from "lucide-react";
 import { serviceCategories } from "@/lib/utils";
 
@@ -36,6 +39,15 @@ const categoryIcons = {
 };
 
 const Services = () => {
+  const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
+
+  const toggleCategory = (categoryId: string) => {
+    setExpandedCategories(prev => ({
+      ...prev,
+      [categoryId]: !prev[categoryId]
+    }));
+  };
+
   return (
     <div className="min-h-screen flex flex-col pb-16 md:pb-0">
       <Navbar />
@@ -85,6 +97,9 @@ const Services = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {serviceCategories.map((category, index) => {
                 const Icon = categoryIcons[category.id as keyof typeof categoryIcons] || Building;
+                const isExpanded = expandedCategories[category.id] || false;
+                const visibleServices = isExpanded ? category.services : category.services.slice(0, 8);
+                const hasMore = category.services.length > 8;
                 
                 return (
                   <Card 
@@ -108,22 +123,62 @@ const Services = () => {
                     </CardHeader>
                     
                     <CardContent className="p-6 bg-background">
-                      <div className="space-y-2.5 mb-6 min-h-[200px]">
-                        {category.services.slice(0, 8).map((service, idx) => (
-                          <div 
-                            key={idx} 
-                            className="flex items-start gap-2.5 text-sm text-muted-foreground group-hover:text-foreground transition-colors"
-                          >
-                            <CheckCircle2 
-                              className="text-primary flex-shrink-0 mt-0.5 w-4 h-4 group-hover:scale-110 transition-transform" 
-                              size={16} 
-                            />
-                            <span className="leading-relaxed">{service}</span>
+                      <div className="space-y-2.5 mb-6 overflow-hidden">
+                        {/* Visible Services Container with sliding animation */}
+                        <div 
+                          className="transition-all duration-700 ease-in-out overflow-hidden"
+                          style={{
+                            maxHeight: isExpanded ? 'none' : '400px',
+                          }}
+                        >
+                          <div className="space-y-2.5">
+                            {category.services.map((service, idx) => {
+                              const shouldShow = idx < 8 || isExpanded;
+                              const isNewlyAdded = isExpanded && idx >= 8;
+                              
+                              return (
+                                <div 
+                                  key={`${category.id}-${idx}`}
+                                  className={`flex items-start gap-2.5 text-sm text-muted-foreground group-hover:text-foreground transition-all duration-500 ${
+                                    shouldShow 
+                                      ? 'opacity-100 translate-y-0' 
+                                      : 'opacity-0 max-h-0 overflow-hidden -translate-y-2'
+                                  }`}
+                                  style={{ 
+                                    transitionDelay: isNewlyAdded ? `${(idx - 8) * 50}ms` : '0ms'
+                                  }}
+                                >
+                                  <CheckCircle2 
+                                    className="text-primary flex-shrink-0 mt-0.5 w-4 h-4 group-hover:scale-110 transition-transform" 
+                                    size={16} 
+                                  />
+                                  <span className="leading-relaxed">{service}</span>
+                                </div>
+                              );
+                            })}
                           </div>
-                        ))}
-                        {category.services.length > 8 && (
-                          <div className="text-sm font-semibold text-primary pt-3 border-t border-border">
-                            +{category.services.length - 8} More Services
+                        </div>
+                        
+                        {/* View More/View Less Button */}
+                        {hasMore && (
+                          <div className="pt-3 border-t border-border mt-4">
+                            <Button
+                              variant="ghost"
+                              onClick={() => toggleCategory(category.id)}
+                              className="w-full text-primary hover:text-primary hover:bg-primary/10 font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2"
+                            >
+                              {isExpanded ? (
+                                <>
+                                  <span>View Less</span>
+                                  <ChevronUp className="h-4 w-4 transition-transform duration-300" />
+                                </>
+                              ) : (
+                                <>
+                                  <span>View More ({category.services.length - 8} more)</span>
+                                  <ChevronDown className="h-4 w-4 transition-transform duration-300" />
+                                </>
+                              )}
+                            </Button>
                           </div>
                         )}
                       </div>

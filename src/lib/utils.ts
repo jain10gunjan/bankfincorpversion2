@@ -1,13 +1,13 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import educationImage from "@/assets/heroimages/educationimage.jpg"
-import homeLoan from "@/assets/heroimages/homeloan.jpg"
-import commercialProject from "@/assets/heroimages/commercialImage.jpg"
-import personalBusiness from "@/assets/heroimages/personalImage.jpg"
-import vehicleInstant from "@/assets/heroimages/vechileImage.jpg"
-import msmeImage from "@/assets/heroimages/msmeImage.jpg"
-import insuranceImage from "@/assets/heroimages/insuranceImage.jpg"
-import creditCardAccount from "@/assets/heroimages/creditCardImage.jpg"
+import educationImage from "@/assets/heroimages/educationimage.png"
+import homeLoan from "@/assets/heroimages/homeloan.png"
+import commercialProject from "@/assets/heroimages/commercialImage.png"
+import personalBusiness from "@/assets/heroimages/personalImage.png"
+import vehicleInstant from "@/assets/heroimages/vechileImage.png"
+import msmeImage from "@/assets/heroimages/msmeImage.png"
+import insuranceImage from "@/assets/heroimages/insuranceImage.png"
+import creditCardAccount from "@/assets/heroimages/creditCardImage.png"
 
 
 export function cn(...inputs: ClassValue[]) {
@@ -38,7 +38,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "home-loans-commercial-property",
     title: "Home Loans & Commercial Property",
-    description: "Secure loans for residential and commercial properties",
+    description: "Secure loans for residential and commercial properties (Secure)",
     services: [
       "Mortgage-LAP Loans",
       "Land Purchase",
@@ -59,7 +59,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "personal-instant-loans-credit-cards",
     title: "Personal, Instant Loans & Credit Cards",
-    description: "Unsecured loans and credit card solutions",
+    description: "Unsecured loans and credit card solutions (Unsecured)",
     services: [
       "Unsecure Personal",
       "Microfinance",
@@ -79,7 +79,7 @@ export const serviceCategories: ServiceCategory[] = [
   },
   {
     id: "business-loans-accounts",
-    title: "Business Loans & Account Openings",
+    title: "Business Loans & All Types Account Open",
     description: "Complete business financing and banking solutions",
     services: [
       "Small Business Loans",
@@ -165,7 +165,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "insurance-mediclaim",
     title: "Insurance & Mediclaim Policy",
-    description: "Complete insurance and health coverage solutions",
+    description: "Complete insurance and health coverage solutions (Many More)",
     services: [
       "Life Insurance",
       "General Insurance",
@@ -188,7 +188,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "taxation-utility-services",
     title: "Taxation & Utility Services",
-    description: "Complete tax planning and compliance services",
+    description: "Complete tax planning and compliance services (Many More)",
     services: [
       "Tax Planning",
       "NRI Tax Services",
@@ -231,7 +231,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "kiosk-services",
     title: "BankFincorp Kiosk: 300+ Online Services",
-    description: "One-stop solution for all your financial needs",
+    description: "300+ Online Services in One Place",
     services: [
       "Online Registration for All States",
       "Instant Loan",

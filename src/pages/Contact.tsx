@@ -7,9 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import whatsappImage from "@/assets/heroimages/whatsapp.png";
 
 const contactInfo = [
   {
@@ -201,8 +202,12 @@ Thank you!`;
                         />
                       </div>
 
-                      <Button type="submit" size="lg" className="w-full gradient-hero">
-                        <MessageCircle className="mr-2" size={20} />
+                      <Button type="submit" size="lg" className="w-full gradient-hero flex items-center justify-center">
+                        <img 
+                          src={whatsappImage} 
+                          alt="WhatsApp" 
+                          className="w-5 h-5 mr-2 object-cover"
+                        />
                         Send via WhatsApp
                       </Button>
                     </form>
@@ -251,7 +256,11 @@ Thank you!`;
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 p-4 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
                       >
-                        <MessageCircle size={24} />
+                        <img 
+                          src={whatsappImage} 
+                          alt="WhatsApp" 
+                          className="w-6 h-6 object-cover"
+                        />
                         <div>
                           <div className="font-semibold">WhatsApp Us</div>
                           <div className="text-sm text-white/80">+91 9522444141</div>

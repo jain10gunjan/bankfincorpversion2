@@ -12,7 +12,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
-import { CheckCircle2, FileText, Clock, Shield, MessageCircle } from "lucide-react";
+import { CheckCircle2, FileText, Clock, Shield } from "lucide-react";
+import whatsappImage from "@/assets/heroimages/whatsapp.png";
 
 const loanApplicationSchema = z.object({
   fullName: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name too long"),
@@ -411,10 +412,14 @@ Thank you!`;
                       <Button
                         type="submit"
                         size="lg"
-                        className="flex-1 gradient-hero"
+                        className="flex-1 gradient-hero flex items-center justify-center"
                         disabled={isSubmitting}
                       >
-                        <MessageCircle className="mr-2" size={20} />
+                        <img 
+                          src={whatsappImage} 
+                          alt="WhatsApp" 
+                          className="w-5 h-5 mr-2 object-cover"
+                        />
                         {isSubmitting ? "Redirecting..." : "Submit via WhatsApp"}
                       </Button>
                       <Button

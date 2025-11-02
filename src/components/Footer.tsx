@@ -20,7 +20,7 @@ const Footer = () => {
               Your trusted partner for all financial needs. We provide comprehensive financial services to help you achieve your goals.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61579302287432#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Facebook size={20} />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -29,7 +29,7 @@ const Footer = () => {
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/bank_fincorp/?fbclid=IwY2xjawN0ZMNleHRuA2FlbQIxMQBicmlkETFhaHRaWnJMaDVza1h2YkFXAR7i2NLecQXSeeS-UbqMvpBgetV1bxsDtESQK7_kBCtd_6421eqqDpc1tu5Spg_aem_QixDWqodVsPp3nrTfFM4xA" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram size={20} />
               </a>
             </div>
