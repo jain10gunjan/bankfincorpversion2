@@ -58,8 +58,8 @@ const ServicesCarousel = () => {
           </div>
         </div>
 
-        <div className="relative">
-          <div ref={scrollRef} className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4" style={{ scrollBehavior: "smooth" }}>
+        <div className="relative w-full max-w-full overflow-hidden">
+          <div ref={scrollRef} className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 w-full" style={{ scrollBehavior: "smooth" }}>
             {services.map((s, i) => (
               <Card key={i} className="min-w-[260px] max-w-[260px] snap-start overflow-hidden hover:shadow-elevated transition-shadow">
                 <CardContent className="p-0">

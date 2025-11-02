@@ -40,93 +40,93 @@ const MobileBottomMenu = () => {
   return (
     <>
       {/* Sticky Bottom Menu - Mobile Only */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t shadow-lg md:hidden">
-        <div className="flex items-center justify-between h-16 px-1">
-          {/* Menu Button - Left Side */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t shadow-lg md:hidden w-full max-w-full overflow-hidden">
+        <div className="flex items-center justify-evenly h-16 px-0.5 w-full max-w-full">
+          {/* Menu Button */}
           <button
             onClick={() => setIsMenuOpen(true)}
-            className="flex flex-col items-center justify-center min-w-[56px] h-full transition-colors"
+            className="flex flex-col items-center justify-center flex-1 min-w-0 h-full transition-colors px-0.5"
           >
-            <div className="w-9 h-9 rounded-full gradient-hero flex items-center justify-center shadow-md mb-0.5">
-              <Menu size={18} className="text-white" />
+            <div className="w-8 h-8 rounded-full gradient-hero flex items-center justify-center shadow-md mb-0.5">
+              <Menu size={16} className="text-white" />
             </div>
-            <span className="text-[10px] leading-tight text-primary font-medium">Menu</span>
+            <span className="text-[9px] leading-tight text-primary font-medium whitespace-nowrap">Menu</span>
           </button>
 
           {/* Home */}
           <Link
             to="/"
-            className={`flex flex-col items-center justify-center min-w-[56px] h-full transition-colors ${
+            className={`flex flex-col items-center justify-center flex-1 min-w-0 h-full transition-colors px-0.5 ${
               isActive("/") ? "text-primary" : "text-muted-foreground"
             }`}
           >
-            <div className="w-9 h-9 rounded-full bg-muted/50 flex items-center justify-center mb-0.5">
-              <Home size={18} />
+            <div className="w-8 h-8 rounded-full bg-muted/50 flex items-center justify-center mb-0.5">
+              <Home size={16} />
             </div>
-            <span className="text-[10px] leading-tight">Home</span>
+            <span className="text-[9px] leading-tight whitespace-nowrap">Home</span>
           </Link>
 
           {/* Services */}
           <Link
             to="/services"
-            className={`flex flex-col items-center justify-center min-w-[56px] h-full transition-colors ${
+            className={`flex flex-col items-center justify-center flex-1 min-w-0 h-full transition-colors px-0.5 ${
               isActive("/services") ? "text-primary" : "text-muted-foreground"
             }`}
           >
-            <div className="w-9 h-9 rounded-full bg-muted/50 flex items-center justify-center mb-0.5">
-              <Briefcase size={18} />
+            <div className="w-8 h-8 rounded-full bg-muted/50 flex items-center justify-center mb-0.5">
+              <Briefcase size={16} />
             </div>
-            <span className="text-[10px] leading-tight">Services</span>
+            <span className="text-[9px] leading-tight whitespace-nowrap">Services</span>
           </Link>
 
           {/* Contact Us */}
           <Link
             to="/contact"
-            className={`flex flex-col items-center justify-center min-w-[56px] h-full transition-colors ${
+            className={`flex flex-col items-center justify-center flex-1 min-w-0 h-full transition-colors px-0.5 ${
               isActive("/contact") ? "text-primary" : "text-muted-foreground"
             }`}
           >
-            <div className="w-9 h-9 rounded-full bg-muted/50 flex items-center justify-center mb-0.5">
-              <Phone size={18} />
+            <div className="w-8 h-8 rounded-full bg-muted/50 flex items-center justify-center mb-0.5">
+              <Phone size={16} />
             </div>
-            <span className="text-[10px] leading-tight">Contact</span>
+            <span className="text-[9px] leading-tight whitespace-nowrap">Contact</span>
           </Link>
 
           {/* WhatsApp Button */}
           <button
             onClick={handleWhatsAppClick}
-            className="flex flex-col items-center justify-center min-w-[56px] h-full transition-colors"
+            className="flex flex-col items-center justify-center flex-1 min-w-0 h-full transition-colors px-0.5"
             aria-label="Contact us on WhatsApp"
           >
-            <div className="w-9 h-9 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center transition-colors mb-0.5 shadow-sm">
-              <MessageCircle size={18} className="text-white" />
+            <div className="w-8 h-8 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center transition-colors mb-0.5 shadow-sm">
+              <MessageCircle size={16} className="text-white" />
             </div>
-            <span className="text-[10px] leading-tight text-muted-foreground">WhatsApp</span>
+            <span className="text-[9px] leading-tight text-muted-foreground whitespace-nowrap">WhatsApp</span>
           </button>
 
           {/* Chatbot Button */}
           <button
             onClick={handleChatbotClick}
-            className="flex flex-col items-center justify-center min-w-[56px] h-full transition-colors"
+            className="flex flex-col items-center justify-center flex-1 min-w-0 h-full transition-colors px-0.5"
             aria-label="Open Chatbot"
           >
-            <div className="w-9 h-9 rounded-full gradient-hero flex items-center justify-center transition-colors mb-0.5 shadow-sm">
-              <Bot size={18} className="text-white" />
+            <div className="w-8 h-8 rounded-full gradient-hero flex items-center justify-center transition-colors mb-0.5 shadow-sm">
+              <Bot size={16} className="text-white" />
             </div>
-            <span className="text-[10px] leading-tight text-muted-foreground">Chat</span>
+            <span className="text-[9px] leading-tight text-muted-foreground whitespace-nowrap">Chat</span>
           </button>
 
           {/* DSA Button - Coming Soon */}
           <button
             onClick={handleDSAClick}
-            className="flex flex-col items-center justify-center min-w-[56px] h-full transition-colors opacity-70"
+            className="flex flex-col items-center justify-center flex-1 min-w-0 h-full transition-colors opacity-70 px-0.5"
             aria-label="DSA - Coming Soon"
           >
-            <div className="w-9 h-9 rounded-full bg-muted flex items-center justify-center transition-colors mb-0.5">
-              <Users size={18} className="text-muted-foreground" />
+            <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center transition-colors mb-0.5">
+              <Users size={16} className="text-muted-foreground" />
             </div>
-            <span className="text-[10px] leading-tight text-muted-foreground">DSA</span>
-            <span className="text-[9px] leading-tight text-muted-foreground/70">Soon</span>
+            <span className="text-[9px] leading-tight text-muted-foreground whitespace-nowrap">DSA</span>
+            <span className="text-[8px] leading-tight text-muted-foreground/70 whitespace-nowrap">Soon</span>
           </button>
         </div>
       </div>

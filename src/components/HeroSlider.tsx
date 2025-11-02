@@ -35,19 +35,19 @@ const HeroSlider = () => {
   }, [nextSlide]);
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50 min-h-screen">
-      <div className="container mx-auto px-6 md:px-8 lg:px-12 py-4 md:py-12 h-full flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
+    <div className="relative overflow-x-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50 min-h-screen">
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 py-6 md:py-12 h-full flex items-center overflow-x-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full overflow-x-hidden">
           {/* Content */}
-          <div className="space-y-6 md:space-y-8 z-10 relative order-1 lg:order-1">
+          <div className="space-y-6 md:space-y-8 z-10 relative order-1 lg:order-1 overflow-x-hidden">
             {/* Slide Counter */}
              
 
-            <div className="space-y-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold-custom leading-tight">
+            <div className="space-y-4 overflow-x-hidden max-w-full">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold-custom leading-tight break-words max-w-full">
                 {slides[currentSlide].title}
-                <span className="block text-accent mt-2">{slides[currentSlide].highlight}</span>
-                <span className="block text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mt-4 text-foreground/80 leading-relaxed">
+                <span className="block text-accent mt-2 break-words max-w-full">{slides[currentSlide].highlight}</span>
+                <span className="block text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mt-4 text-foreground/80 leading-relaxed break-words max-w-full">
                   {slides[currentSlide].subtitle}
                 </span>
               </h1>
@@ -64,7 +64,7 @@ const HeroSlider = () => {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
+            <div className="hidden md:flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
               <Link to={slides[currentSlide].link}>
                 <Button size="lg" className="gradient-hero text-white px-6 py-4 md:px-8 md:py-6 text-base md:text-lg font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
                   {slides[currentSlide].cta}
@@ -84,7 +84,7 @@ const HeroSlider = () => {
               <img
                 src={slides[currentSlide].image}
                 alt={slides[currentSlide].highlight}
-                className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] object-cover transition-all duration-700 ease-out group-hover:scale-105"
+                className="w-full h-[180px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] object-cover transition-all duration-700 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
