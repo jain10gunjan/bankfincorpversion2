@@ -44,7 +44,7 @@ const HeroSlider = () => {
              
 
             <div className="space-y-4 overflow-x-hidden max-w-full">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold-custom leading-tight break-words max-w-full">
+              <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold-custom leading-tight break-words max-w-full">
                 {slides[currentSlide].title}
                 <span className="block text-accent mt-2 break-words max-w-full">{slides[currentSlide].highlight}</span>
                 <span className="block text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mt-4 text-foreground/80 leading-relaxed break-words max-w-full">
@@ -84,7 +84,7 @@ const HeroSlider = () => {
               <img
                 src={slides[currentSlide].image}
                 alt={slides[currentSlide].highlight}
-                className="w-full h-[220px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] object-cover transition-all duration-700 ease-out group-hover:scale-105"
+                className="w-full h-[200px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] object-cover transition-all duration-700 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
