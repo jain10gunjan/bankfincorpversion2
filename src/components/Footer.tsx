@@ -80,7 +80,8 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-sm text-muted-foreground">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
-                <span>B - Bank Fincorp Unit-1, Shop No. C/16, Sudarshan Complex, Near Police Post, Pithampur Sector-1,Indore, MP 454775, India</span>
+                <span>B - Bank Fincorp Unit-1, Shop No. C/16, Sudarshan Complex, Near Police Post, Pithampur Sector-1 dist Dhar (M.P.) 454775, India</span>
+                <span>Head Branch - A: Head Branch Coming soon to Indore M.P.</span>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone size={18} />

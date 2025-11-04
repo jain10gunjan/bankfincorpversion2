@@ -29,13 +29,13 @@ const contactInfo = [
     icon: MapPin,
     title: "Head Branch",
     details: "B - Bank Fincorp Unit-1, Shop No. C/16",
-    subdetails: "Sudarshan Complex, Near Police Post, Pithampur Sector-2, District Dhar, MP 454775, India",
+    subdetails: "Sudarshan Complex, Near Police Post, Pithampur Sector-1, District Dhar, MP 454775, India | Head Branch - A: Head Branch Coming soon to Indore M.P.",
   },
   {
     icon: Clock,
     title: "Business Hours",
     details: "Monday - Saturday",
-    subdetails: "9:00 AM - 6:00 PM",
+    subdetails: "10:00 AM - 5:00 PM",
   },
 ];
 
