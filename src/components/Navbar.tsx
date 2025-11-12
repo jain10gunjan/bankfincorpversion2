@@ -14,6 +14,8 @@ const Navbar = () => {
   ];
 
   const applyButtonPath = "/apply";
+  const applyDSA = "/dsa";
+
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -51,15 +53,11 @@ const Navbar = () => {
           {/* Desktop Action Buttons */}
           <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             {/* DSA Button */}
-            <Button
-              onClick={() => alert("DSA feature coming soon!")}
-              className="gradient-hero relative h-10 px-4"
-            >
-              DSA
-              <span className="absolute -top-1.5 -right-1.5 bg-yellow-400 text-gray-900 text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow-sm">
-                Soon
-              </span>
-            </Button>
+            <Link to={applyDSA}>
+              <Button className="gradient-hero h-10 px-4">
+                 DSA
+              </Button>
+            </Link>
             {/* Apply Now Button */}
             <Link to={applyButtonPath}>
               <Button className="gradient-hero h-10 px-4">

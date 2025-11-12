@@ -4,10 +4,12 @@ import { Home, Menu, Calculator, Phone, Briefcase, Bot, Users } from "lucide-rea
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { bankFincorpServices } from "@/lib/utils";
 import whatsappImage from "@/assets/heroimages/whatsapp.png";
+import { useChatBot } from "./ChatBotWrapper";
 
 const MobileBottomMenu = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { openChatBot } = useChatBot();
 
   const navItems = [
     { name: "Home", path: "/", icon: Home },
@@ -26,10 +28,7 @@ const MobileBottomMenu = () => {
   };
 
   const handleChatbotClick = () => {
-    // You can integrate with your chatbot service here
-    // For now, we'll show an alert or you can add your chatbot integration
-    alert("Chatbot feature coming soon!");
-    // Example: window.open('your-chatbot-url', '_blank');
+    openChatBot();
   };
 
   const handleDSAClick = () => {
