@@ -220,7 +220,7 @@ const ChatBot = ({ initialOpen = false, onClose }: ChatBotProps) => {
           "shadow-2xl border-2 border-primary/20 bg-background transition-all",
           isMinimized
             ? "w-80 h-16"
-            : "w-[calc(100vw-1rem)] md:w-[380px] h-[calc(100vh-6rem)] md:h-[550px] md:max-h-[85vh] flex flex-col"
+            : "w-[calc(100vw-1rem)] md:w-[380px] h-[500px] max-h-[70vh] md:h-[550px] md:max-h-[85vh] flex flex-col"
         )}
       >
         {isMinimized ? (

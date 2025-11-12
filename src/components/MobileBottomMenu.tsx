@@ -121,17 +121,16 @@ const MobileBottomMenu = () => {
           </button>
 
           {/* DSA Button - Coming Soon */}
-          <button
-            onClick={handleDSAClick}
+           <Link
+            to="/dsa"
             className="flex flex-col items-center justify-center flex-1 min-w-0 h-full transition-colors opacity-70 px-0.5"
-            aria-label="DSA - Coming Soon"
           >
             <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center transition-colors mb-0.5">
               <Users size={16} className="text-muted-foreground" />
             </div>
             <span className="text-[9px] leading-tight text-muted-foreground whitespace-nowrap">DSA</span>
-            <span className="text-[8px] leading-tight text-muted-foreground/70 whitespace-nowrap">Soon</span>
-          </button>
+             
+          </Link>
         </div>
       </div>
 
