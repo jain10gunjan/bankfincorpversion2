@@ -112,7 +112,7 @@ Please contact me to discuss the franchise opportunity.
 Thank you!`;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/919599000062?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/+919977074141?text=${encodedMessage}`;
 
     // Simulate API call
     setTimeout(() => {
@@ -135,7 +135,7 @@ Thank you!`;
   };
 
   const quickStats = [
-    { icon: Calculator, value: "₹1,50,000", label: "Investment Required" },
+    { icon: Calculator, value: "₹1,50,000", label: "Capital Needed" },
     { icon: Building2, value: "200 sq.ft", label: "Space Needed" },
     { icon: TrendingUp, value: "20%", label: "Royalty Model" },
     { icon: Calendar, value: "15-30 Days", label: "Training Program" },
@@ -259,7 +259,7 @@ Thank you!`;
 
   const faqItems = [
     {
-      question: "What is the total investment required?",
+      question: "What is the total Captial Needed?",
       answer:
         "₹1,50,000 initial investment covering franchise fee, setup, and working capital. This includes all necessary equipment, branding materials, and initial marketing support.",
     },
@@ -352,7 +352,7 @@ Thank you!`;
           </div>
         </section>
 
-        {/* Quick Stats */}
+        {/* Quick Stats
         <section className="py-12 bg-muted/30 -mt-8">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -371,7 +371,7 @@ Thank you!`;
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Why Franchise */}
         <section className="py-16 md:py-20">
@@ -407,7 +407,7 @@ Thank you!`;
         </section>
 
         {/* Investment Breakdown */}
-        <section className="py-16 bg-gradient-to-b from-muted/20 to-transparent">
+        {/* <section className="py-16 bg-gradient-to-b from-muted/20 to-transparent">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
@@ -481,7 +481,7 @@ Thank you!`;
               </Card>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* What You Get */}
         <section className="py-16">
@@ -816,7 +816,7 @@ Thank you!`;
                 variant="outline"
                 className="bg-white/10 border-white text-white hover:bg-white/20 font-semibold px-8"
                 onClick={() => {
-                  const whatsappUrl = `https://wa.me/919599000062?text=${encodeURIComponent("Hello! I'd like to schedule a call about the franchise opportunity.")}`;
+                  const whatsappUrl = `https://wa.me/+919977074141?text=${encodeURIComponent("Hello! I'd like to schedule a call about the franchise opportunity.")}`;
                   window.open(whatsappUrl, "_blank");
                 }}
               >
@@ -1011,7 +1011,7 @@ Thank you!`;
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
                       <a
-                        href="tel:09599000062"
+                        href="tel:9977074141"
                         className="flex items-center gap-3 p-4 rounded-lg hover:bg-muted/50 transition-colors"
                       >
                         <div className="w-12 h-12 rounded-full gradient-hero flex items-center justify-center">
@@ -1019,7 +1019,7 @@ Thank you!`;
                         </div>
                         <div>
                           <div className="font-semibold">Phone</div>
-                          <div className="text-sm text-muted-foreground">09599000062</div>
+                          <div className="text-sm text-muted-foreground">+919977074141</div>
                         </div>
                       </a>
 
@@ -1039,7 +1039,7 @@ Thank you!`;
                       </a>
 
                       <a
-                        href={`https://wa.me/919599000062?text=${encodeURIComponent("Hello! I'm interested in the franchise opportunity.")}`}
+                        href={`https://wa.me/+919977074141?text=${encodeURIComponent("Hello! I'm interested in the franchise opportunity.")}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 p-4 rounded-lg hover:bg-muted/50 transition-colors"
@@ -1053,7 +1053,7 @@ Thank you!`;
                         </div>
                         <div>
                           <div className="font-semibold">WhatsApp</div>
-                          <div className="text-sm text-muted-foreground">+91 9599000062</div>
+                          <div className="text-sm text-muted-foreground">+91 9977074141</div>
                         </div>
                       </a>
                     </CardContent>

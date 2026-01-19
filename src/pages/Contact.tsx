@@ -29,7 +29,7 @@ const contactInfo = [
     icon: MapPin,
     title: "Head Branch",
     details: "B - Bank Fincorp Unit-1, Shop No. C/16",
-    subdetails: "Sudarshan Complex, Near Police Post, Pithampur Sector-1, District Dhar, MP 454775, India | Head Branch - A: Head Branch Coming soon to Indore M.P.",
+    subdetails: "Head Branch B - Sudarshan Complex, Near Police Post, Sector-1 Pithampur/Indore, District Dhar, MP 454775, India | Head Branch - A: Head Branch Coming soon to Indore M.P.",
   },
   {
     icon: Clock,

@@ -120,25 +120,30 @@ const Index = () => {
               <h2 className="text-2xl md:text-3xl font-bold mb-2">Trusted by Top Banks & NBFCs</h2>
                
             </div>
-            <div className="relative overflow-hidden">
-              <div className="flex animate-marquee">
-                {[
-                  { alt: "SBI", src: "https://sbi.co.in/o/SBI-Theme/images/custom/logo.png" },
-                  { alt: "HDFC Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/375px-HDFC_Bank_Logo.svg.png" },
-                  { alt: "ICICI Bank", src: "https://i0.wp.com/pathfinderstraining.com/wp-content/uploads/2022/10/ICICI-BANK-LOGO.png?fit=4620%2C1200&ssl=1" },
-                  { alt: "Axis Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/AXISBank_Logo.svg/2560px-AXISBank_Logo.svg.png" },
-                  { alt: "Kotak", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ51HGpmIn5CQwTBteGJ8dH5FZj4-V6kuPoQ&s" },
-                  { alt: "Yes Bank", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7hIU7hKVcm98kSsxw_qhXR6-Xx2Wi-BSXAw&s" },
-                  { alt: "L&T Finance", src: "https://selfhelp.ltfs.com/ServicingApp/assets/images/logo.png" },
-                  { alt: "Bajaj Finserv", src: "https://wp.logos-download.com/wp-content/uploads/2024/04/Bajaj_Finserv_Logo.png?dl" },
-                  { alt: "IndusInd Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Logo_of_IDFC_First_Bank.svg/375px-Logo_of_IDFC_First_Bank.svg.png" },
-                  { alt: "Federal Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Federal-Bank-Logo_SVG.svg/500px-Federal-Bank-Logo_SVG.svg.png" },
-                  { alt: "PNB", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Punjab_National_Bank_new_logo.svg/375px-Punjab_National_Bank_new_logo.svg.png" },
-                ].map((bank, i) => (
-                  <div key={i} className="flex-shrink-0 mx-8 h-12 flex items-center opacity-70 hover:opacity-100 transition-opacity">
-                    <img src={bank.src} alt={bank.alt} className="h-8 w-auto object-contain" />
-                  </div>
-                ))}
+            <div className="relative overflow-hidden w-full">
+              <div className="flex animate-marquee whitespace-nowrap">
+                {(() => {
+                  const banks = [
+                    { alt: "SBI", src: "https://sbi.co.in/o/SBI-Theme/images/custom/logo.png" },
+                    { alt: "HDFC Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/375px-HDFC_Bank_Logo.svg.png" },
+                    { alt: "ICICI Bank", src: "https://i0.wp.com/pathfinderstraining.com/wp-content/uploads/2022/10/ICICI-BANK-LOGO.png?fit=4620%2C1200&ssl=1" },
+                    { alt: "Axis Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/AXISBank_Logo.svg/2560px-AXISBank_Logo.svg.png" },
+                    { alt: "Kotak", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ51HGpmIn5CQwTBteGJ8dH5FZj4-V6kuPoQ&s" },
+                    { alt: "Yes Bank", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7hIU7hKVcm98kSsxw_qhXR6-Xx2Wi-BSXAw&s" },
+                    { alt: "L&T Finance", src: "https://www.businessremedies.com/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-19-at-9.33.53-PM.jpeg" },
+                    { alt: "Bajaj Finserv", src: "https://wp.logos-download.com/wp-content/uploads/2024/04/Bajaj_Finserv_Logo.png?dl" },
+                    { alt: "IndusInd Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Logo_of_IDFC_First_Bank.svg/375px-Logo_of_IDFC_First_Bank.svg.png" },
+                    { alt: "Federal Bank", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Federal-Bank-Logo_SVG.svg/500px-Federal-Bank-Logo_SVG.svg.png" },
+                    { alt: "PNB", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Punjab_National_Bank_new_logo.svg/375px-Punjab_National_Bank_new_logo.svg.png" }
+                  ];
+                  // Duplicate 3 times for more visible content and seamless loop
+                  const duplicatedBanks = [...banks, ...banks, ...banks];
+                  return duplicatedBanks.map((bank, i) => (
+                    <div key={i} className="flex-shrink-0 mx-8 h-12 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                      <img src={bank.src} alt={bank.alt} className="h-8 w-auto object-contain max-w-[120px]" loading="lazy" />
+                    </div>
+                  ));
+                })()}
               </div>
             </div>
           </div>
@@ -455,7 +460,7 @@ const Index = () => {
                         <div>
                           <h4 className="font-bold text-lg">Business Hours</h4>
                           <p className="text-primary font-semibold">Monday - Saturday</p>
-                          <p className="text-sm text-muted-foreground">9:00 AM - 6:00 PM</p>
+                          <p className="text-sm text-muted-foreground">10:00 AM - 7:00 PM</p>
                         </div>
                       </div>
                     </CardContent>
