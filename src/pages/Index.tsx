@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Shield, Zap, Users, MapPin, Clock, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import mapImage from "@/assets/heroimages/mapImage.png";
+import mapImage from "@/assets/heroimages/mapImage2.png";
 import whatsappImage from "@/assets/heroimages/whatsapp.png";
 // Using high-quality internet images instead of local assets
 const personalLoanImg = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80&auto=format&fit=crop";
